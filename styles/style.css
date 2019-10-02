@@ -1,54 +1,59 @@
 * {
     box-sizing: border-box;
 }
+
+html{
+    display: flex;
+    height: 98vh;
+    flex-direction: column;
+}
+
 body {
-    background-image: url("fullSize.jpg");
+    background-image: url("../images/calendar-background-original.jpg");
     background-repeat: no-repeat;
-    height: 100vh;
-    width:100%;
-    
+    background-size: cover;
+    background-position:center;
+    background-attachment: fixed;
+    height: 100%;
 }
- .main { 
-     
-    height: 100vh;
-    width:100%;
-    
-    text-align: center;}
 
-#logo {
-    display: inline-block;
-    margin: 25px 0;
-} 
-
-header, footer {
-    background-image :url("https://image.shutterstock.com/z/stock-photo-black-white-and-gray-brick-wall-pattern-that-can-be-used-for-wallpaper-or-background-473767720.jpg");
-    width: 100%;
-    height: 7vh;
-    margin: 0;
-    color: white;
-    font-family: 'Turret Road', cursive;
-    font-size: 33px;
-}
-.nav-link {
+h2 {
     color: white;
 }
+
+p {
+    color: white;
+}
+
 button {
-    display: inline-block;
-    margin: 10px;
-}
-.quoteDay{
+    display: flex;
+    padding: 15px;
     color: white;
-    margin-top: 20px;
+    background-color: #4ca746;
+    border-radius: 5px;
 }
-.quoteBox {
+
+button:nth-child(3) {
+    margin-left: 175px
+}
+
+.container{
+    width:75%;
+}
+.bckgrd {
+    width: auto;
+    background-color: rgb(68, 116, 148);
+    width: 50%;
+    padding:10px;
+    justify-content: center;
+}
+
+.day {
+    margin: 10px;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    margin-top: 35px;
-}
-#quotes {
-    font-family: 'Courgette', cursive;
-    color: #03f4fc;
+    border-bottom: 1px solid black;
+    padding: 10px;
 }
 
 /* The Modal (background) */

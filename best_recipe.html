@@ -23,8 +23,38 @@
            <div class="main">
                 <img id="logo" src="plan-ahead-logo.png"/>
                 <div>
-                        <button type="button" class="btn btn-primary btn-lg btn-success">For Today</button>
-                        <button type="button" class="btn btn-secondary btn-lg btn-success">For the Week </button>
+                        <button type="button" class="btn btn-secondary btn-lg btn-success"><a href="">For the Week</a></button>
+                        <!-- <button id ="today" type="button" class="btn btn-primary btn-lg btn-success">For Today</button> -->
+                        <div class="day">
+                            <div class="bckgrd">
+                              <div></div>
+                                <!-- Trigger/Open The Modal -->
+                                <button href="#today" class="btn btn-primary btn-lg btn-success modal-button" href="#myModal7">Meal Recipe</button>
+                            </div>">For Today</button>
+                              </div>
+                              <div></div>
+                            </div> 
+                            <!-- The Modal -->
+                            <div id="today" class="modal">
+                              <!-- Modal content -->
+                              <div class="modal-content">
+
+                                <div class="modal-header">
+                                  <span class="close">×</span>
+                                  <h2 class="name"></h2>
+                                </div>
+                                <div class="modal-body">
+                                  <p>Some text in the Modal Body</p>
+                                  <p>Some other text...</p>
+                                  
+                                </div>
+                                <div class="modal-footer">
+                                  <h3>Modal Footer</h3>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        <!-- <button type="button" class="btn btn-secondary btn-lg btn-success"><a href="">For the Week</a></button> -->
                     
                 </div>
                 <div class = "quoteBox">
@@ -35,6 +65,7 @@
         
             
         <footer>Contact Us</footer>
+      <script src= "functions.js"></script>
     </body>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -44,7 +75,8 @@
      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
      crossorigin="anonymous"></script>
      <script src="best_recipe.js"></script>
-    
+     
+     
 
 
 
