@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-image: url("fullSize.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    width:100%;
+    
+}
+ .main { 
+     
+    height: 100vh;
+    width:100%;
+    
+    text-align: center;}
+   
+    
+
+
+
+
+#logo {
+    display: inline-block;
+    margin: 25px 0;
+} 
+
+header, footer {
+    background-image :url("https://image.shutterstock.com/z/stock-photo-black-white-and-gray-brick-wall-pattern-that-can-be-used-for-wallpaper-or-background-473767720.jpg");
+    width: 100%;
+    height: 7vh;
+    margin: 0;
+    color: white;
+    font-family: 'Turret Road', cursive;
+    font-size: 33px;
+}
+.nav-link {
+    color: white;
+}
+button {
+    display: inline-block;
+    margin: 10px;
+}
+.quoteDay{
+    color: white;
+    margin-top: 20px;
+}
+.quoteBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 35px;
+}
+#quotes {
+    font-family: 'Courgette', cursive;
+    color: #03f4fc;
+}
+
