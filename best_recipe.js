@@ -1,10 +1,10 @@
+//Function to load daily quote
 $.ajax({
     type: "GET",
     url: "http://quotes.rest/qod.json?category=inspire",
     dataType: "JSON",
     success: function(response){
-    //   var dailyQuote=(response.contents.quotes[0]);
-    //   return dailyQuote;
+
     console.log(response);
     text(response.contents.quotes[0].quote, response.contents.quotes[0].author);
     },
@@ -12,10 +12,7 @@ $.ajax({
       console.log("Error: " + error);
     }
    });
-  /*function quotes(){
- var quotesPosition=document.getElementsByTagName("quotes");
- quotesPosition.(dailyQuote);
-  }*/
+
   function text(argument,argument1){
  var heading=$("<h3/>").text(' " ' + argument + ' \" ');
  $("#quotes").append(heading);
@@ -23,6 +20,7 @@ $.ajax({
  $("#author").append(author);
   }
 
+//Function to load daily meal plan
   $.ajax({
     type: "GET",
     url: "https://www.themealdb.com/api/json/v1/1/random.php",
@@ -42,16 +40,48 @@ $.ajax({
       $(".modal-body").append(recipe);
 
      var image = document.createElement("img")
-      //image.innerHTML="<img src=" +arg3+ "></img>";
+    
       $(".modal-body").append(image.innerHTML="<img src=" +arg3+ "></img>");
-      
-      
    }
-    var buttonElement1 = document.getElementById('today');
-    buttonElement1.addEventListener('click',foodData(response.meals[0].strMeal, response.meals[0].strInstructions, response.meals[0].strMealThumb));
-  
     
 
+//Function to load week meal planner
+    $.ajax({
+      type: "GET",
+      url: "https://www.themealdb.com/api/json/v1/1/search.php?s",
+      dataType: "JSON",
+      success: function(response){
+      console.log(response);
+      var array = [];
+      //for (var i=1; i<=7; i++){
+     while(array.length <7){
+        var randomize = Math.floor(Math.random() *25);
+        if (array.indexOf(randomize)=== -1){
+           array.push(randomize);
+        }
+     //     else {
+     //         array.push(randomize);
+     //    }
+     //       //array.push(Math.floor(Math.random() * 25))
+      }
+      array.forEach(function(element){
+      food(response.meals[element].strMeal, response.meals[element].strInstructions, response.meals[element].strMealThumb);
+      })
+     },
+      error: function(error){
+        console.log("Error: " + error);
+      }
+     });
+     
+     function food(argument, argument1, argument2){
+     var name = $("<h3/>").text(argument);
+     $("body").append(name);var image = document.createElement("img");
+     image.src = argument2;
+     $("body").append(image);var recipe = $("<h5/>").text(argument1);
+     $("body").append(recipe);
+     }
+  
+    
      
 
    
