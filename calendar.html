@@ -6,9 +6,296 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Weekly Meal Planner</title>
 </head>
+  <link href="https://fonts.googleapis.com/css?family=Courgette|Turret+Road:700|Vibes&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles/style.css">
+  <link type="text/css" media="print" />
+  <style>
+  * {
+    box-sizing: border-box;
+}
+
+a,
+a:hover,
+a:focus {
+    color: white;
+    text-decoration: none;
+}
+
+html{
+    display: flex;
+    height: 98vh;
+    flex-direction: column;
+}
+
+body {
+    
+    background-image: url("images/calendar-background-original.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+
+h2 {
+    display:flex;
+    color: white;
+    justify-content: center;
+}
+
+p {
+    color: white;
+}
+
+button {
+    padding: 15px;
+    color: white;
+    background-color: #4ca746;
+    border-radius: 5px;
+    justify-content: center !important;
+}
+
+
+img {
+    width: 350px;
+    height: auto;
+    padding: 30px;
+}
+
+header, footer {
+    /* display: flex; */
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 6vh;
+    margin: 0;
+    /* padding: 10px; */
+    font-family: 'Turret Road', cursive;
+    font-size: 33px;
+    /* justify-items: space-around; */
+}
+header
+{
+  display: flex;
+  position:fixed;
+  top:0;
+  margin: 0;
+  padding: 0;
+  justify-items: space-around;
+}
+footer
+{
+   position:fixed;
+   bottom:0;
+   margin: 0;
+   padding: 5px 0px 45px 10px !important;
+}
+.nav-link,
+.nav-link:hover,
+.nav-link:focus {
+   display: inline-flex;
+   padding: 5px 9px;
+   color: white;
+   text-decoration: none;
+}
+
+.container{
+    width:75%;
+    height: 86vh;
+}
+.bckgrd {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 30px;
+    width: auto;
+    background-color: rgb(68, 116, 148);
+    width: 50%;
+    padding:10px;
+    justify-content: center;
+}
+
+.day {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.day:nth-last-child(){
+    margin: 10px;
+    display:flex;
+    justify-content: center;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    font-family: 'Turret Road', cursive;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    font-family: 'Turret Road', cursive;
+}
+
+.modal-content {
+    width: 700px;
+    height: auto;
+}
+
+#bodyId{
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #4ca746;
+    color: white;
+}
+
+.modal-body {
+    display:flex;
+    padding: 2px 16px;
+    flex-direction: column;
+
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #4ca746;
+    color: white;
+    text-align: center;
+}
+
+#myModalImage1,
+#myModalImage2,
+#myModalImage3,
+#myModalImage4,
+#myModalImage5,
+#myModalImage6,
+#myModalImage7 {
+    display: flex;
+    justify-content: center;
+}
+
+@media print { 
+  body {visibility:hidden;}
+  .print, .modal {visibility:visible;}
+}
+
+@media only screen and (max-width: 645px){
+  .nav-link,
+  .nav-link:focus,
+  .nav-link:hover{
+    margin:0;
+    
+  }
+  p{
+    font-size:11px;
+    padding:0px;
+  }
+  img{
+    width:100px;
+    height:auto;
+  }
+  footer{
+    font-size:20px;
+  }
+  .nav-link {
+    font-size: 20px;
+  }
+  header{
+    padding:0px;
+
+  }
+  
+}
+@media only screen and (max-width: 935px){
+  .nav-link,
+  .nav-link:focus,
+  .nav-link:hover{
+    margin:0;
+    
+  }
+  p{
+    font-size:11px;
+    padding:0px;
+  }
+  img{
+    width:250px;
+    height:auto;
+  }
+  footer{
+    font-size:30px;
+  }
+  .nav-link {
+    font-size: 30px;
+  }
+  header{
+    padding:0px;
+
+  }
+}
+
+  </style>
   <body>
+      <header> 
+          <nav class="nav">
+                  <a class="nav-link active" href="best_recipe.html">Home</a>
+                  <a class="nav-link" href="aboutUs.html">About Us</a>
+                  <a class="nav-link" href="menuBox.html">Menu</a>
+                </nav>
+      
+      
+     </header>
   <div class="container">
     <div class="day">
       <div class="bckgrd">
@@ -30,7 +317,7 @@
           </div>
           <div id="myModalBody1" class="modal-body"></div>
           <div id="myModalFooter1" class="modal-footer">
-            <h3></h3>
+              <a title="print screen" alt="print screen" onclick="window.print(myModal1);" target="_blank" style="cursor:pointer;">print</a>
           </div>
         </div>
       </div>
@@ -56,7 +343,7 @@
           </div>
           <div id="myModalBody2" class="modal-body"></div>
           <div id="myModalFooter2" class="modal-footer">
-            <h3></h3>
+              <a title="print screen" alt="print screen" onclick="window.print();" target="_blank" style="cursor:pointer;">print</a>
           </div>
         </div>
       </div>
@@ -82,7 +369,7 @@
           </div>
           <div id="myModalBody3" class="modal-body"></div>
           <div id="myModalFooter3" class="modal-footer">
-            <h3></h3>
+              <a title="print screen" alt="print screen" onclick="window.print();" target="_blank" style="cursor:pointer;">print</a>
           </div>
         </div>
       </div>
@@ -108,7 +395,7 @@
           </div>
           <div id="myModalBody4" class="modal-body"></div>
           <div id="myModalFooter4" class="modal-footer">
-            <h3></h3>
+              <a title="print screen" alt="print screen" onclick="window.print();" target="_blank" style="cursor:pointer;">print</a>
           </div>
         </div>
       </div>
@@ -134,7 +421,7 @@
           </div>
           <div id="myModalBody5" class="modal-body"></div>
           <div id="myModalFooter5" class="modal-footer">
-            <h3></h3>
+              <a title="print screen" alt="print screen" onclick="window.print();" target="_blank" style="cursor:pointer;">print</a>
           </div>
         </div>
       </div>
@@ -160,7 +447,7 @@
           </div>
           <div id="myModalBody6" class="modal-body"></div>
           <div id="myModalFooter6" class="modal-footer">
-            <h3></h3>
+              <a title="print screen" alt="print screen" onclick="window.print();" target="_blank" style="cursor:pointer;">print</a>
           </div>
         </div>
       </div>
@@ -186,7 +473,7 @@
           </div>
           <div id="myModalBody7" class="modal-body"></div>
           <div id="myModalFooter7" class="modal-footer">
-            <h3></h3>
+              <a title="print screen" alt="print screen" onclick="window.print();" target="_blank" style="cursor:pointer;">print</a>
           </div>
         </div>
       </div>
@@ -199,6 +486,163 @@
      src="https://code.jquery.com/jquery-3.4.1.min.js"
      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
      crossorigin="anonymous"></script>
-    <script src="functions.js"></script>
+    <script>
+    // Get the button that opens the modal
+var btn = document.querySelectorAll("button.modal-button");
+
+// All page modals
+var modals = document.querySelectorAll('.modal');
+
+// Get the <span> element that closes the modal
+var spans = document.getElementsByClassName("close");
+
+// When the user clicks the button, open the modal
+for (var i = 0; i < btn.length; i++) {
+btn[i].onclick = function(e) {
+    e.preventDefault();
+    modal = document.querySelector(e.target.getAttribute("href"));
+    modal.style.display = "block";
+}
+}
+
+// When the user clicks on <span> (x), close the modal
+for (var i = 0; i < spans.length; i++) {
+spans[i].onclick = function() {
+    for (var index in modals) {
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+    }
+}
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+    for (var index in modals) {
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+    }
+    }
+}
+
+
+
+$.ajax({
+  type: "GET",
+  url: "https://www.themealdb.com/api/json/v1/1/random.php",
+  dataType: "JSON",
+  success: function(response){
+  console.log(response);
+  foodData(response.meals[0].strMeal, response.meals[0].strInstructions, response.meals[0].strMealThumb, myModalHeader1, myModalBody1, myModalImage1);
+  },
+  error: function(error){
+    console.log("Error: " + error);
+  }
+  });
+
+$.ajax({
+  type: "GET",
+  url: "https://www.themealdb.com/api/json/v1/1/random.php",
+  dataType: "JSON",
+  success: function(response){
+  console.log(response);
+  foodData(response.meals[0].strMeal, response.meals[0].strInstructions, response.meals[0].strMealThumb, myModalHeader2, myModalBody2, myModalImage2 );
+  },
+  error: function(error){
+    console.log("Error: " + error);
+  }
+  });
+
+$.ajax({
+  type: "GET",
+  url: "https://www.themealdb.com/api/json/v1/1/random.php",
+  dataType: "JSON",
+  success: function(response){
+  console.log(response);
+  foodData(response.meals[0].strMeal, response.meals[0].strInstructions, response.meals[0].strMealThumb, myModalHeader3, myModalBody3, myModalImage3);
+  },
+  error: function(error){
+    console.log("Error: " + error);
+  }
+  });
+
+$.ajax({
+  type: "GET",
+  url: "https://www.themealdb.com/api/json/v1/1/random.php",
+  dataType: "JSON",
+  success: function(response){
+  console.log(response);
+  foodData(response.meals[0].strMeal, response.meals[0].strInstructions, response.meals[0].strMealThumb, myModalHeader4, myModalBody4, myModalImage4);
+  },
+  error: function(error){
+    console.log("Error: " + error);
+  }
+  });
+
+$.ajax({
+  type: "GET",
+  url: "https://www.themealdb.com/api/json/v1/1/random.php",
+  dataType: "JSON",
+  success: function(response){
+  console.log(response);
+  foodData(response.meals[0].strMeal, response.meals[0].strInstructions, response.meals[0].strMealThumb, myModalHeader5, myModalBody5, myModalImage5);
+  },
+  error: function(error){
+    console.log("Error: " + error);
+  }
+  });
+
+$.ajax({
+  type: "GET",
+  url: "https://www.themealdb.com/api/json/v1/1/random.php",
+  dataType: "JSON",
+  success: function(response){
+  console.log(response);
+  foodData(response.meals[0].strMeal, response.meals[0].strInstructions, response.meals[0].strMealThumb, myModalHeader6, myModalBody6, myModalImage6);
+  },
+  error: function(error){
+    console.log("Error: " + error);
+  }
+  });
+
+$.ajax({
+  type: "GET",
+  url: "https://www.themealdb.com/api/json/v1/1/random.php",
+  dataType: "JSON",
+  success: function(response){
+  console.log(response);
+  foodData(response.meals[0].strMeal, response.meals[0].strInstructions, response.meals[0].strMealThumb, myModalHeader7, myModalBody7, myModalImage7);
+  },
+  error: function(error){
+    console.log("Error: " + error);
+  }
+  });
+
+
+  
+  function foodData(arg, arg1, arg3, headerId, bodyId, imageId){
+      var meal=$(headerId).text(arg);
+      $(headerId).append(meal);
+      var recipe =$(bodyId).text(arg1);
+      $(bodyId).append(recipe);
+
+     var image = document.createElement("img")
+      $(imageId).append(image.innerHTML="<img src=" +arg3+ "></img>");   
+   }
+
+   var buttonElement1 = document.getElementById('today');
+    buttonElement1.addEventListener('click',foodData(response.meals[0].strMeal, response.meals[0].strInstructions, response.meals[0].strMealThumb, myModalHeader1, myModalBody1, myModalImage1));
+    var buttonElement2 = document.getElementById('today');
+    buttonElement1.addEventListener('click',foodData(response.meals[0].strMeal, response.meals[0].strInstructions, response.meals[0].strMealThumb, myModalHeader2, myModalBody2, myModalImage2));
+    var buttonElement3 = document.getElementById('today');
+    buttonElement1.addEventListener('click',foodData(response.meals[0].strMeal, response.meals[0].strInstructions, response.meals[0].strMealThumb, myModalHeader3, myModalBody3, myModalImage3));
+    var buttonElement4 = document.getElementById('today');
+    buttonElement1.addEventListener('click',foodData(response.meals[0].strMeal, response.meals[0].strInstructions, response.meals[0].strMealThumb, myModalHeader4, myModalBody4, myModalImage4));
+    var buttonElement5 = document.getElementById('today');
+    buttonElement1.addEventListener('click',foodData(response.meals[0].strMeal, response.meals[0].strInstructions, response.meals[0].strMealThumb, myModalHeader5, myModalBody5, myModalImage5));
+    var buttonElement6 = document.getElementById('today');
+    buttonElement1.addEventListener('click',foodData(response.meals[0].strMeal, response.meals[0].strInstructions, response.meals[0].strMealThumb, myModalHeader6, myModalBody6, myModalImage6));
+    var buttonElement7 = document.getElementById('today');
+    buttonElement1.addEventListener('click',foodData(response.meals[0].strMeal, response.meals[0].strInstructions, response.meals[0].strMealThumb, myModalHeader7, myModalBody7, myModalImage7cc));</script>
+    <footer><a href="https://www.digitalcrafts.com/">Contact Us</a></footer>
   </body>
+  
 </html>
